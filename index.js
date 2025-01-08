@@ -1,4 +1,4 @@
-var Shopper = require('./Shopper');
+var Shopper = require('./shopper');
 var Employee = require('./Employee');
 
 var alex = new Shopper('Alex Banks', 100);
