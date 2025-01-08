@@ -1,33 +1,21 @@
-const Logger = require('./logger');
-const Shopper = require('./shopper');
-const Store = require('./store');
+var PersonBuilder = require('./PersonBuilder')
+
+// Employees
+// var sue = new Person('Sue', true, true, 60);
+// var bill = new Person('Bill', true, false, 20);
+// var phil = new Person('Phil', true, false);
 
 
-const logger = new Logger().getInstance()
+var sue = new PersonBuilder('Sue').makeEmployee().makeManager().fullTime(60).build();
+var bill = new PersonBuilder('Bill').makeEmployee().fullTime(20).build();
+var phil = new PersonBuilder('Phil').makeEmployee().build();
 
-logger.log("Indexjs has started")
+// // Shoppers
+var charles = new PersonBuilder('Charles').creditAccount(500).shopList(['jeans', 'sunglasses']).build();  
+var tabbitha = new PersonBuilder('Tabbitha').creditAccount(1000).build();
 
-
-const shopper1 = new Shopper("Shubhankar",699)
-const shopper2 = new Shopper("Atul",399)
-
-const store1 = new Store("Walmart",[{"pizza": 500, "tomatoes": 500}])
-const store2 = new Store("Tesco",[{"pizza": 500, "tomatoes": 500}])
-
-
-
-
-
-
-logger.log("Indexjs has ended")
-
-
-
-console.log("<========================TOTAL LOGS================================>")
-
-let logObject= {
-    totalLogCount : logger.getCount(),
-    totalMessages : [...logger.logs]
-}
-
-console.log("logObject : ",logObject)
+ console.log(sue.toString())
+ console.log(bill.toString())
+ console.log(phil.toString())
+ console.log(charles.toString())
+ console.log(tabbitha.toString())

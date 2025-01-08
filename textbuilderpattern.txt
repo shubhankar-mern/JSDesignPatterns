@@ -1,0 +1,14 @@
+In order to know about the paramets of person we need to see class
+Not very descriotive
+builder pattern comes tob rescue
+Its is fix for telescopic constructor problem
+
+
+
+$ node index.js
+{"name":"Sue","isEmployee":true,"isManager":true,"hours":60,"money":0,"shoppingList":[]}
+{"name":"Bill","isEmployee":true,"isManager":false,"hours":20,"money":0,"shoppingList":[]}
+{"name":"Phil","isEmployee":true,"isManager":false,"hours":40,"money":0,"shoppingList":[]}
+{"name":"Charles","isEmployee":false,"isManager":false,"hours":0,"money":500,"shoppingList":["jeans","sunglasses"]}
+{"name":"Tabbitha","isEmployee":false,"isManager":false,"hours":0,"money":1000,"shoppingList":[]}
+
