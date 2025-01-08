@@ -1,0 +1,15 @@
+Logger is showing 2 logs only but we log 4 more times while creation of shoppers and store
+This is becauese new instance of loggers are created
+This is wrong
+
+One Instance must be shared
+A desgin pattern that deals with creation of object must be used and only one instance must be shared
+
+That is creational pattern - > Singleton design pattern
+
+
+create a singleton class .Make sure only one instance of loggar is instantiated and shared
+use it everywhere
+
+
+In nodejs exporting new Logger will also do
