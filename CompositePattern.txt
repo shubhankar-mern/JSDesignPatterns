@@ -1,0 +1,2 @@
+This pattern is used for tree like structure
+reuse existing code.
