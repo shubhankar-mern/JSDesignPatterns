@@ -1,0 +1,2 @@
+proxyPattern is basically used when you wanna block access to something 
+Here we only want markdown to be read and not txt fileso we block the filesystem readFile method

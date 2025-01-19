@@ -1,33 +1,23 @@
-const Logger = require('./logger');
-const Shopper = require('./shopper');
-const Store = require('./store');
+//var fs = require('fs');
+var path = require('path');
+var FS_Proxy = require('./FS_Proxy.js');
+var fs = new FS_Proxy(require('fs'));
 
+var txtFile = path.join(__dirname, 'Readme.txt');
+var mdFile = path.join(__dirname, 'Readme.md');
 
-const logger = new Logger().getInstance()
+var result = (error, contents) => {
 
-logger.log("Indexjs has started")
+    if (error) {
+        console.log('\x07');
+        console.error(error);
+        process.exit(0);
+    }
 
+    console.log('reading file...');
+    console.log(contents);
 
-const shopper1 = new Shopper("Shubhankar",699)
-const shopper2 = new Shopper("Atul",399)
-
-const store1 = new Store("Walmart",[{"pizza": 500, "tomatoes": 500}])
-const store2 = new Store("Tesco",[{"pizza": 500, "tomatoes": 500}])
-
-
-
-
-
-
-logger.log("Indexjs has ended")
-
-
-
-console.log("<========================TOTAL LOGS================================>")
-
-let logObject= {
-    totalLogCount : logger.getCount(),
-    totalMessages : [...logger.logs]
 }
 
-console.log("logObject : ",logObject)
+//fs.readFile(txtFile, 'UTF-8', result);
+fs.readFile(mdFile, 'UTF-8', result);
