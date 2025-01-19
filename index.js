@@ -1,33 +1,22 @@
-const Logger = require('./logger');
-const Shopper = require('./shopper');
-const Store = require('./store');
+var CatalogItem = require('./CatalogItem');
+var CatalogGroup = require('./CatalogGroup');
+
+var boots = new CatalogItem("Leather Boots", 79.99);
+var sneakers = new CatalogItem("Kicks", 39.99);
+var flipFlops = new CatalogItem("California work boots", 19.99);
+
+var group_shoes = new CatalogGroup("Shoes and Such", [boots, sneakers, flipFlops]);
+
+var group_food = new CatalogGroup("Food and Such", [new CatalogItem("Burger", 9.99),new CatalogItem("Pizza", 5.99)]);
 
 
-const logger = new Logger().getInstance()
+var MainCatalog = new CatalogGroup("All Items", [group_shoes, group_food]);
+// console.log( 'boots total: ', `$${boots.total}` );
+// console.log( 'shoes total: ', `$${group_shoes.total}`);
 
-logger.log("Indexjs has started")
+// boots.print();
+// sneakers.print();
 
-
-const shopper1 = new Shopper("Shubhankar",699)
-const shopper2 = new Shopper("Atul",399)
-
-const store1 = new Store("Walmart",[{"pizza": 500, "tomatoes": 500}])
-const store2 = new Store("Tesco",[{"pizza": 500, "tomatoes": 500}])
-
-
-
-
-
-
-logger.log("Indexjs has ended")
-
-
-
-console.log("<========================TOTAL LOGS================================>")
-
-let logObject= {
-    totalLogCount : logger.getCount(),
-    totalMessages : [...logger.logs]
-}
-
-console.log("logObject : ",logObject)
+//group_shoes.print();
+//group_food.print();
+MainCatalog.print()
