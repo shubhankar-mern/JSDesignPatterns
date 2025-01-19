@@ -1,0 +1,3 @@
+What we learn here is that localstorage is a browser api.
+Nodejs doe not have an access to it.
+So we make an adapter to this enviornment and expose all those methods that is needed for the operation.
